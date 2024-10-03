@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    font-family: "Jost";
+}
+
+h1 {
+    color: #555;
+}
+
+main {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4px;
+}
+
+section button {
+    padding: 50px;
+    background: #75a;
+    border: none;
+    border-radius: 10px;
+    color: #eee;
+    cursor: pointer;
+    gap: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+    
+section button:hover {
+    background: #95a;
+    transition: 0.5s all ease;
+}
+    
+section button span {
+    display: block;
+    font-weight: bold;
+}
+
+section button img {
+    width: 60px;
+}

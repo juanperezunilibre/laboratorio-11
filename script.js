@@ -10,8 +10,33 @@ btnEvaluacion.addEventListener("click", function() {
 
     alert("Bienvenido al módulo de evaluación de empleado, ingresa tu nombre y el valor de la evaluación del resultado de tu auditoría.")
 
-    let name = prompt("Nombre del empleado: ")
-    let calificacion = parseInt(prompt("Resultado de la evaluación: "))
+    let ok = false;
+    let name, calificacion
+
+    while (!ok) {
+        try {
+            console.log(name, calificacion)
+            if (!name) {
+                name = prompt("Nombre del empleado: ")
+                if (!name) {
+                    alert("El nombre no debe ser vacío")
+                    continue
+                }
+            }
+            
+            if(!calificacion) {
+                calificacion = parseInt(prompt("Resultado de la evaluación: "))
+                if (!calificacion || typeof calificacion !== "number") {
+                    alert("La calificación no debe ser vacía y debe ser un número entero")
+                    continue
+                }
+            }
+
+            ok = true
+        } catch (error) {
+            alert(error)
+        }
+    }
 
     let message = `${name}, tu calificafión es: `
 
