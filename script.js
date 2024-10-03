@@ -5,7 +5,7 @@ let btnPlayground = document.getElementById("playground")
 
 
 // Punto 1
-btnEvaluacion.addEventListener("click", function() {
+btnEvaluacion.addEventListener("click", function () {
     // cal >= 90 - Destacado , >= 70 < 90 - Desempeño satisfactorio, desempeño insatifactorio
 
     alert("Bienvenido al módulo de evaluación de empleado, ingresa tu nombre y el valor de la evaluación del resultado de tu auditoría.")
@@ -15,7 +15,7 @@ btnEvaluacion.addEventListener("click", function() {
 
     let message = `${name}, tu calificafión es: `
 
-    if(calificacion >= 90){  // >= 90
+    if (calificacion >= 90) {  // >= 90
         message += "Destacado."
     } else if (calificacion >= 70 && calificacion < 90) {
         message += "Desempeño satisfactorio."
@@ -27,24 +27,34 @@ btnEvaluacion.addEventListener("click", function() {
 })
 
 // Punto 2
-btnCheckStock.addEventListener("click", function() {
+btnCheckStock.addEventListener("click", function () {
     alert("Bienvenido al módulo de inventario")
 
-    let code = prompt("Ingrese el código del producto")
-    let random = Math.floor((Math.random() * 100) + 1)
+    let code;
 
-    let message = `El producto con código ${code} tiene inventario: `
+    while (code != "q") {
+        code = prompt("Ingrese el código del producto")
+        if (code != "q") {
+            let random = Math.floor((Math.random() * 100) + 1)
 
-    if (random % 2 == 0) {
-        message += "El inventario está balanceado"
-    } else {
-        message += "Revisar inventario, número irregular"
+            let message = `El producto con código ${code} tiene inventario: `
+
+            if (random % 2 == 0) {
+                message += "El inventario está balanceado"
+            } else {
+                message += "Revisar inventario, número irregular"
+            }
+            alert(message)
+        }
     }
-    alert(message)
+
+    alert("Hasta luego, vuelva pronto!")
+
+
 })
 
 // Punto 3
-btnCalculateOff.addEventListener("click", function() {
+btnCalculateOff.addEventListener("click", function () {
     alert("Bienvenido al módulo de compra")
 
     let total = parseFloat(prompt("Ingrese valor de la compra:"))
@@ -61,17 +71,19 @@ btnCalculateOff.addEventListener("click", function() {
 })
 
 // Punto 4
-btnPlayground.addEventListener("click", function() {
+btnPlayground.addEventListener("click", function () {
     alert("Bienvenido al módulo de juego de adivinanza")
 
+    let numero;
     let random = Math.floor((Math.random() * 10) + 1)
-    let numero = parseInt(prompt("Ingrese un numero entre 1 y 10"))
-
-
-    if (numero == random) {
-        alert("¡Felicidades! has ganado un cupón de descuento.")
-    } else {
-        alert(`Lo siento, el número era ${random}`)
+    
+    while (random != numero) {
+        numero = parseInt(prompt("Ingrese un numero entre 1 y 10"))
+    
+        if (numero == random) {
+            alert("¡Felicidades! has ganado un cupón de descuento.")
+        }
     }
+    
 })
 
