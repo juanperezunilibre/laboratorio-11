@@ -28,16 +28,50 @@ btnEvaluacion.addEventListener("click", function() {
 
 // Punto 2
 btnCheckStock.addEventListener("click", function() {
-    alert("Módulo de gestión de stock")
+    alert("Bienvenido al módulo de inventario")
+
+    let code = prompt("Ingrese el código del producto")
+    let random = Math.floor((Math.random() * 100) + 1)
+
+    let message = `El producto con código ${code} tiene inventario: `
+
+    if (random % 2 == 0) {
+        message += "El inventario está balanceado"
+    } else {
+        message += "Revisar inventario, número irregular"
+    }
+    alert(message)
 })
 
 // Punto 3
 btnCalculateOff.addEventListener("click", function() {
-    alert("Módulo de descuento")
+    alert("Bienvenido al módulo de compra")
+
+    let total = parseFloat(prompt("Ingrese valor de la compra:"))
+
+    let message = "El valor total de la compra: "
+
+    if (total > 100) {
+        message += total - total * .1
+    } else {
+        message += total
+    }
+
+    alert(message)
 })
 
 // Punto 4
 btnPlayground.addEventListener("click", function() {
-    alert("Módulo de juego de adivinanza")
+    alert("Bienvenido al módulo de juego de adivinanza")
+
+    let random = Math.floor((Math.random() * 10) + 1)
+    let numero = parseInt(prompt("Ingrese un numero entre 1 y 10"))
+
+
+    if (numero == random) {
+        alert("¡Felicidades! has ganado un cupón de descuento.")
+    } else {
+        alert(`Lo siento, el número era ${random}`)
+    }
 })
 
